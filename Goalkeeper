@@ -1,0 +1,15 @@
+// The fireball is type "ball".
+function command(peasants) {
+    for (let peasant of peasants) {
+        let pos = (hero.findByType("ball")[0].pos.y + 35) / 2;
+        if (peasant == peasants[0]) {
+            hero.command(peasant, "move", {x: 17, y: pos + 2});
+        }
+        if (peasant == peasants[1]) {
+            hero.command(peasant, "move", {x: 17, y: pos - 2});
+        }
+    }
+}
+while(true) {
+    command(hero.findByType("peasant"));
+}
